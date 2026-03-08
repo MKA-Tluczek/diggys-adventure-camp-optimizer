@@ -7,9 +7,9 @@ In Diggy's Adventure, player can place equipment in their camp. There are two ty
 
 Total regeneration of all equipment is summed up into one value. Same goes for capacity.
 
-Every piece of equipment also has its size, measured with **width** and **height**.
+Every piece of equipment also has its size, measured with width and height.
 * Player's camp has limited number of equipment slots, and each equipment takes up number of those slots equal to its **width**.
-* Every camp slot has its height, and accepts only equipment of that same height or shorter.
+* Every camp slot has its height, and accepts only equipment of that same **height** or shorter.
   * Stacking two short equips on top of each other in one tall slot is not allowed.
 * Active equipment in camp can be freely replaced. Inactive equips take no space, but do nothing.
 
@@ -26,7 +26,7 @@ Ideally, a player should determine the approximate number of hours they are goin
 This ensures maximum energy waiting for them next time. However, there are two issues.
 1. Obtaining the exact ratio is often impossible due to specific, unchangeable values of equipment.
 2. Due to different widths and heights of pieces of equipment, it's not trivial to determine the set of equipment of optimal value - problem known as knapsack problem.
-   1. Example one: Last two slots can be filled with a 2-width regen piece, two 1-width regen pieces, 2-width storage piece, two 1-width storage pieces, or one 1-piece regen and storage pieces each. Each of those five combinations increase different values, and depending on rest of the setup thus far, each combination might be efficient in different circumstances.
+   1. Example one: Last two slots can be filled with a 2-width regen piece, two 1-width regen pieces, 2-width storage piece, two 1-width storage pieces, or one 1-width regen and storage pieces each. Each of those five combinations increase different values, and depending on rest of the setup thus far, each combination might be efficient in different circumstances.
    2. Example two: If there's not enough slots for all equipment of a particular height, in one scenario it might be optimal to prioritize tall regen equipment, and compensate it with using more short storage equipment. In another scenario, the opposite might hold true.
 
 ## Solution
