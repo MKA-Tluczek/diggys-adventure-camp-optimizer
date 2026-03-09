@@ -1,7 +1,6 @@
 package diggyoptimizer;
 
 public class SetupFull {
-	private static int windmillBonus;
 	private final SetupHalf halfRegen;
 	private final SetupHalf halfCapacity;
 
@@ -10,16 +9,12 @@ public class SetupFull {
 		this.halfCapacity = halfCapacity;
 	}
 
-	public static void setWindmillBonus(int windmillBonus) {
-		SetupFull.windmillBonus = windmillBonus;
-	}
-
 	public int getRegenValue(){
-		return halfRegen.getTotalPower() + 60 + windmillBonus;
+		return halfRegen.getTotalPower();
 	}
 
 	public int getCapacityValue(){
-		return halfCapacity.getTotalPower() + 230;
+		return halfCapacity.getTotalPower();
 	}
 
 	public int getEnergyAfterNHours(int hours){

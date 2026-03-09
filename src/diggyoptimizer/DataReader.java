@@ -29,7 +29,7 @@ public class DataReader {
 			String[] nextEquip;
 			boolean nextIsCapacity;
 			while(scanner.hasNext()){
-				nextEquip = scanner.nextLine().split(";");
+				nextEquip = scanner.nextLine().split(",");
 				if(nextEquip.length < 6){
 					System.out.println("Faulty line in equip file detected.");
 					continue;

@@ -14,8 +14,8 @@ public class Main {
 		number of 2-height slots
 		number of 3-height slots
 		number of 4-height slots
+		energy per hour per windmill
 		number of active windmills
-		energy per windmill
 		 */
 		List<Integer> parameters = DataReader.readCampParameters(filenames[0]);
 		if(parameters.size() < 5){
@@ -26,7 +26,7 @@ public class Main {
 		int slots = parameters.get(0) + parameters.get(1) + parameters.get(2);
 		int slots3 = parameters.get(1) + parameters.get(2);
 		int slots4 = parameters.get(2);
-		SetupFull.setWindmillBonus(parameters.get(3) * parameters.get(4));
+		SetupHalf.setWindmillBonus(parameters.get(3) * parameters.get(4));
 
 		List<Equip> allEquips = DataReader.readEquipList(filenames[1]);
 		//TODO: Create regen halves
