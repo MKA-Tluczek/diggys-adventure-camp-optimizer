@@ -1,5 +1,6 @@
 package diggyoptimizer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -29,8 +30,13 @@ public class Main {
 		SetupHalf.setWindmillBonus(parameters.get(3) * parameters.get(4));
 
 		List<Equip> allEquips = DataReader.readEquipList(filenames[1]);
-		//TODO: Create regen halves
-		//TODO: Create capacity halves
+		SetupHalfFactory setupFactory = new SetupHalfFactory(allEquips, slots2, slots3, slots4);
+
+		setupFactory.createHalves(false);
+		List<SetupHalf> regenHalves = new ArrayList<>(setupFactory.getHalves());
+		setupFactory.createHalves(true);
+		List<SetupHalf> capacityHalves = new ArrayList<>(setupFactory.getHalves());
+
 		//TODO: Connect and compare halves into full setups
 	}
 }
