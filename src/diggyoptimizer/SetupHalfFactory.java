@@ -38,10 +38,10 @@ public class SetupHalfFactory {
 
 			//remove any SetupHalf that exceeds camp size
 			for(int i = 0; i < newHalves.size();){
-				SetupHalf half = halves.get(i);
+				SetupHalf half = newHalves.get(i);
 				if(half.getHeight2Taken() > slots2
 						|| half.getHeight3Taken() > slots3
-						|| half.getHeight4Taken() > slots4) halves.remove(i);
+						|| half.getHeight4Taken() > slots4) newHalves.remove(i);
 				else i++;
 			}
 
