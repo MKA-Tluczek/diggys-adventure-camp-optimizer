@@ -4,7 +4,7 @@ public class SetupHalf {
 	private String contents;
 	private final boolean capacityHalf;
 	private int totalPower;
-	private int slotsTaken;
+	private int height2Taken;
 	private int height3Taken;
 	private int height4Taken;
 	private static int windmillBonus;
@@ -16,7 +16,7 @@ public class SetupHalf {
 		else totalPower = 60 + windmillBonus; //60 - free starting regeneration
 
 		contents = "";
-		slotsTaken = 0;
+		height2Taken = 0;
 		height3Taken = 0;
 		height4Taken = 0;
 	}
@@ -25,7 +25,7 @@ public class SetupHalf {
 		contents = origin.contents;
 		capacityHalf = origin.capacityHalf;
 		totalPower = origin.totalPower;
-		slotsTaken = origin.slotsTaken;
+		height2Taken = origin.height2Taken;
 		height3Taken = origin.height3Taken;
 		height4Taken = origin.height4Taken;
 	}
@@ -35,7 +35,7 @@ public class SetupHalf {
 
 		contents = contents.concat(quantity + "x " + equip.getName() + "\n");
 		totalPower += equip.getPower() * quantity;
-		slotsTaken += equip.getWidth() * quantity;
+		height2Taken += equip.getWidth() * quantity;
 		if(equip.getHeight() >= 3) height3Taken += equip.getWidth() * quantity;
 		if(equip.getHeight() == 4) height4Taken += equip.getWidth() * quantity;
 	}
@@ -61,8 +61,8 @@ public class SetupHalf {
 		return totalPower;
 	}
 
-	public int getSlotsTaken() {
-		return slotsTaken;
+	public int getHeight2Taken() {
+		return height2Taken;
 	}
 
 	public int getHeight3Taken() {

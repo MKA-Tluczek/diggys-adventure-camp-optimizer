@@ -23,7 +23,7 @@ public class Main {
 			return;
 		}
 
-		int slots = parameters.get(0) + parameters.get(1) + parameters.get(2);
+		int slots2 = parameters.get(0) + parameters.get(1) + parameters.get(2);
 		int slots3 = parameters.get(1) + parameters.get(2);
 		int slots4 = parameters.get(2);
 		SetupHalf.setWindmillBonus(parameters.get(3) * parameters.get(4));

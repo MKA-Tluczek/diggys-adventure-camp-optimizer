@@ -21,8 +21,8 @@ public class SetupFull {
 		return Math.min(getRegenValue() * hours, getCapacityValue());
 	}
 
-	public int getSlotsTaken(){
-		return halfRegen.getSlotsTaken() + halfCapacity.getSlotsTaken();
+	public int getHeight2Taken(){
+		return halfRegen.getHeight2Taken() + halfCapacity.getHeight2Taken();
 	}
 
 	public int getHeight3Taken(){

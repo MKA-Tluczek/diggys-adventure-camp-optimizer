@@ -39,7 +39,7 @@ public class SetupHalfFactory {
 			//remove any SetupHalf that exceeds camp size
 			for(int i = 0; i < newHalves.size();){
 				SetupHalf half = halves.get(i);
-				if(half.getSlotsTaken() > slots2
+				if(half.getHeight2Taken() > slots2
 						|| half.getHeight3Taken() > slots3
 						|| half.getHeight4Taken() > slots4) halves.remove(i);
 				else i++;
@@ -51,7 +51,7 @@ public class SetupHalfFactory {
 
 					//stop considering this SetupHalf if there's nothing better about it
 					//remove new SetupHalf when it's equal too to prevent duplicates
-					if(potentialHalf.getSlotsTaken() >= currentHalf.getSlotsTaken()
+					if(potentialHalf.getHeight2Taken() >= currentHalf.getHeight2Taken()
 							&& potentialHalf.getHeight3Taken() >= currentHalf.getHeight3Taken()
 							&& potentialHalf.getHeight4Taken() >= currentHalf.getHeight4Taken()
 							&& potentialHalf.getTotalPower() <= currentHalf.getTotalPower()){
@@ -59,7 +59,7 @@ public class SetupHalfFactory {
 					}
 
 					//remove old SetupHalf is new SetupHalf is better or equal in all cases
-					if(potentialHalf.getSlotsTaken() <= currentHalf.getSlotsTaken()
+					if(potentialHalf.getHeight2Taken() <= currentHalf.getHeight2Taken()
 							&& potentialHalf.getHeight3Taken() <= currentHalf.getHeight3Taken()
 							&& potentialHalf.getHeight4Taken() <= currentHalf.getHeight4Taken()
 							&& potentialHalf.getTotalPower() >= currentHalf.getTotalPower()){
