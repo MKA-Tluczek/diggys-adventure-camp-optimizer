@@ -21,6 +21,13 @@ public class SetupFull {
 		return Math.min(getRegenValue() * hours, getCapacityValue());
 	}
 
+	public String getContents(){
+		return "Regeneration equipment:\n"
+				+ halfRegen.getContents()
+				+ "Capacity equipment:\n"
+				+ halfCapacity.getContents();
+	}
+
 	public int getHeight2Taken(){
 		return halfRegen.getHeight2Taken() + halfCapacity.getHeight2Taken();
 	}

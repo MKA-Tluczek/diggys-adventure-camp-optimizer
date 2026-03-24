@@ -17,9 +17,13 @@ public class Main {
 		number of 4-height slots
 		energy per hour per windmill
 		number of active windmills
+		number of idle hours for setup 1
+		number of idle hours for setup 2
+		...
+		number of idle hours for setup N
 		 */
 		List<Integer> parameters = DataReader.readCampParameters(filenames[0]);
-		if(parameters.size() < 5){
+		if(parameters.size() < 6){
 			System.out.println("Incorrect parameters file.");
 			return;
 		}
@@ -37,6 +41,16 @@ public class Main {
 		setupFactory.createHalves(true);
 		List<SetupHalf> capacityHalves = new ArrayList<>(setupFactory.getHalves());
 
-		//TODO: Connect and compare halves into full setups
+		for(int setupNo = 0; setupNo < parameters.size()-5; setupNo++){
+			int hours = parameters.get(setupNo+5);
+			SetupFullFactory setupFullFactory = new SetupFullFactory(
+					regenHalves, capacityHalves, hours, slots2, slots3, slots4);
+			SetupFull solution = setupFullFactory.solve();
+
+			System.out.println("Solution for " + hours + " hours:");
+			System.out.println(solution.getEnergyAfterNHours(hours) + " energy");
+			System.out.println("(" + solution.getRegenValue() + "/hour, " + solution.getCapacityValue() + " capacity)");
+			System.out.println(solution.getContents());
+		}
 	}
 }
